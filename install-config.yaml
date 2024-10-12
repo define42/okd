@@ -1,0 +1,16 @@
+apiVersion: v1
+baseDomain: example.com
+metadata:
+  name: single-node-cluster
+compute:
+- name: worker
+  replicas: 0  # No worker nodes in a single-node cluster
+controlPlane:
+  name: master
+  replicas: 1  # Only 1 control plane replica for SNO
+bootstrapInPlace:
+  installationDisk: /dev/sda  # Set the appropriate installation disk for your environment
+pullSecret: '{"auths":{"fake":{"auth": "bar"}}}'
+sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrHeFL+ZL6munGp/UZwvoRjta/JaGjZC0keOo4Gd8mLOkon9hwP8XtLpLdxmP+x+fGBSHx8bldhjXjv6XOAgZ5FV9zgedl/b/YdOKoXdOdcj1fLNX5jqjnCu/+hixN5IdGkpTMb8TamF4tfu9J3n210WYMmd9nehGUVMnSpHYHaTJ/ZElPV6tou2o/arB3QnZTvLv5V0lo0HISjcUk53xaKVqf3fR4b9lTW/CVROpO7tgbJA5eOcAsN6z0OLMjM56b12SwuwH2UqZhmABrlu+s+7qvBLCp/20zpIYr0OJC9vq+FfbLdpTik0/Y1/Ifk1W5fwhoXTvmJiwaXaap20kUQdqp7+zARlRFziY7TQPBPXk5roNCbguaSKwi/cUbcMQzoT+4TM3kiZMo2RP86DATSV2/oYDeaT/tG3YK7554TM2uRqJzMHaBVQ30EQwJU6Vp9EHxtiUOxe++QT7JNEdjNJYtO3G6XoQB8tdQXjGbFtctdCN7ff4dkzfHUpiYKQs= define42@desktop'
+platform:
+  none: {}
