@@ -19,6 +19,12 @@ RUN openshift-install create single-node-ignition-config
 
 RUN coreos-installer iso ignition embed -fi bootstrap-in-place-for-live-iso.ign fcos-live.iso -o okd.iso
 
+#RUN openshift-install version
+#RUN openshift-install version
+
+#RUN oc adm release info --output=json quay.io/openshift/okd:4.15.0-0.okd-2024-03-10-010116
+#RUN oc adm release info --output=json quay.io/openshift/okd:4.15.0-0.okd-2024-03-10-010116
+#RUN oc adm release info
 FROM scratch AS export
 COPY --from=builder /okd.iso /okd.iso
 COPY --from=builder /auth /auth/
