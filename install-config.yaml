@@ -23,11 +23,11 @@ networking:
   networkType: OVNKubernetes
   serviceNetwork:
   - 172.30.0.0/16
-imageContentSources:
-- mirrors:
-  - localhost:5000/openshift/okd
-  source: quay.io/openshift/okd
-- mirrors:
-  - localhost:5000/openshift/okd
-  source: quay.io/openshift/okd-content
+    #imageContentSources:
+    #- mirrors:
+    #  - localhost:5000/openshift/okd
+    #  source: quay.io/openshift/okd
+    #- mirrors:
+    #  - localhost:5000/openshift/okd
+    #  source: quay.io/openshift/okd-content
 
